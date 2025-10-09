@@ -4,12 +4,13 @@ import "../styles/global.css";
 const { on, content, link } = Astro.props;
 ---
 
-<a href={ link }
+<a
+  href={link}
   class="flex py-1 px-5 font-light text-4xl uppercase rounded-t-sm border-2 border-main border-b-dark"
   class:list={[
     { "font-normal z-1": on === true },
-    { "hover:bg-main": on === false}
+    { "hover:bg-main": on === false },
   ]}
 >
   {content}
-  </a>
+</a>

@@ -14,9 +14,9 @@
 }
 
 @layer base {
-    * {
+    /* * {
         @apply border-1 border-red-500;
-    }
+    } */
     body {
         @apply bg-dark text-light font-common h-screen flex flex-col;
     }
@@ -25,12 +25,12 @@
     }
     h1 {
         font-family: var(--font-main);
-        font-size: var(--text-8xl);
+        font-size: var(--text-7xl);
         font-weight: var(--font-weight-bold);
     }
     h2 {
         font-family: var(--font-header);
-        font-size: var(--text-5xl);
+        font-size: var(--text-4xl);
         font-weight: var(--font-weight-medium);
     }
     h3 {
@@ -41,6 +41,9 @@
 
 @layer components {
     .button {
-        @apply flex w-full font-medium text-5xl uppercase hover:bg-light hover:text-dark active:bg-main;
+        @apply flex w-full font-medium text-4xl uppercase hover:bg-light hover:text-dark active:bg-main transition duration-100;
+    }
+    .button-active {
+        @apply bg-main
     }
 }
