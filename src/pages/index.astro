@@ -1,10 +1,13 @@
 ---
-import Layout from "../layout/Layout.astro";
 import "../styles/global.css";
+
+import Layout from "../layout/Layout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title='Paolo Vincent'>
   <h1 class="font-main">Header 1</h1>
   <h2 class="font-header">Header 2</h2>
   <h3 class="font-common">Header 3</h3>
+  <Button link="/" content="Bouton"/>
 </Layout>
