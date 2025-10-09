@@ -1,1 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=UnifrakturCook:wght@700&display=swap');
 @import "tailwindcss";
+
+@theme {
+    /* Colors : */
+    --color-dark : rgb( 16, 16, 16 );
+    --color-light : rgb( 255, 255, 255);
+    --color-main : rgb( 115, 63, 153);
+    /* Fonts */
+    --font-main: UnifrakturCook, serif;
+    --font-header: Grenze, serif;
+    --font-common: Source Code Pro, sans-serif;
+
+}
+
+@layer base {
+    body {
+        @apply bg-dark text-light font-common;
+    }
+    h1 {
+        @apply font-main font-bold text-8xl;
+    }
+    h2 {
+        @apply font-header font-medium text-5xl;
+    }
+    h3 {
+        @apply font-bold text-2xl;
+    }
+}

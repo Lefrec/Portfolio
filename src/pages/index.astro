@@ -1,16 +1,10 @@
 ---
-
+import Layout from "../layout/Layout.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title='Paolo Vincent'>
+  <h1 class="font-main">Header 1</h1>
+  <h2 class="font-header">Header 2</h2>
+  <h3 class="font-common">Header 3</h3>
+</Layout>
