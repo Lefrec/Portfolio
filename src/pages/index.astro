@@ -2,12 +2,16 @@
 import "../styles/global.css";
 
 import Layout from "../layout/Layout.astro";
-import Button from "../components/Button.astro";
 ---
 
-<Layout title='Paolo Vincent'>
-  <h1 class="font-main">Header 1</h1>
-  <h2 class="font-header">Header 2</h2>
-  <h3 class="font-common">Header 3</h3>
-  <Button link="/" content="Bouton"/>
+<Layout title="Paolo Vincent" current="main">
+  <div>
+    <h1 class="font-main">Paolo Vincent</h1>
+    <div class="flex flex-col gap-4">
+      <a href="/about" class="button">About</a>
+      <a href="/work" class="button">Work</a>
+      <a href="/contact" class="button">Contact</a>
+    </div>
+  </div>
+  <div class="col-span-2"></div>
 </Layout>

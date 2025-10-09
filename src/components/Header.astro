@@ -1,0 +1,17 @@
+---
+import "../styles/global.css";
+
+import Tab from "./Tab.astro";
+
+const { current } = Astro.props;
+---
+
+<header class="py-2">
+    <nav class="flex gap-1 px-8">
+        <Tab on={ current === "main" } content="main" link="/"/>
+        <Tab on={ current === "about" } content="about" link="/about"/>
+        <Tab on={ current === "work" } content="work" link="/work"/>
+        <Tab on={ current === "contact" } content="contact" link="/contact"/>
+    </nav>
+    <div class="flex bg-main h-[2px] -translate-y-[2px]"/>
+</header>

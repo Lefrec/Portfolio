@@ -14,8 +14,14 @@
 }
 
 @layer base {
+    * {
+        @apply border-1 border-red-500;
+    }
     body {
-        @apply bg-dark text-light font-common;
+        @apply bg-dark text-light font-common h-screen flex flex-col;
+    }
+    main {
+        @apply grid grid-cols-3 flex-grow gap-2 px-8 py-4 *:flex *:flex-col *:gap-2;
     }
     h1 {
         font-family: var(--font-main);
@@ -30,5 +36,11 @@
     h3 {
         font-size: var(--text-2xl);
         font-weight: var(--font-weight-bold);
+    }
+}
+
+@layer components {
+    .button {
+        @apply flex w-full font-medium text-5xl uppercase hover:bg-light hover:text-dark active:bg-main;
     }
 }
