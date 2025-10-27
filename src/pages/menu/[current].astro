@@ -1,0 +1,24 @@
+---
+import "../../styles/global.css";
+
+import Layout from "../../layout/Layout.astro";
+
+const { current } = Astro.params;
+
+const current_cap = current.charAt(0).toUpperCase() + current.slice(1);
+---
+
+<Layout
+  title={current === "main"
+    ? "Paolo Vincent"
+    : `Paolo Vincent - ${current_cap}`}
+  current={current}
+  menu={true}
+>
+  <div class="button_holder">
+    <a id="presentation" href="/" class="button" class:list={[{"button-active": current === "main"}]}>Main</a>
+    <a href="/about" class="button" class:list={[{"button-active": current === "about"}]}>About</a>
+    <a href="/work" class="button" class:list={[{"button-active": current === "work"}]}>Work</a>
+    <a href="/contact" class="button" class:list={[{"button-active": current === "contact"}]}>Contact</a>
+  </div>
+</Layout>

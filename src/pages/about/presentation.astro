@@ -5,13 +5,18 @@ import Layout from "../../layout/Layout.astro";
 ---
 
 <Layout title="Paolo Vincent - About" current="about">
-  <div>
+  <div class="hidden md:flex">
     <h1 class="font-main">About</h1>
-    <div class="flex flex-col gap-4">
-      <a id="presentation" href="/about/presentation" class="button">Presentation</a>
+    <div class="button_holder">
+      <a id="presentation" href="/about/presentation" class="button button-active"
+        >Presentation</a
+      >
       <a href="/about/skills" class="button">Skills</a>
       <a href="/about/hobbies" class="button">Hobbies</a>
     </div>
+  </div>
+  <div class="mb-2">
+    <a href="/about" class="button"> &lt; About</a>
   </div>
   <div>
     <h2>Presentation</h2>
@@ -24,6 +29,7 @@ import Layout from "../../layout/Layout.astro";
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.
     </p>
+    <h3>Test de H3</h3>
   </div>
   <div></div>
 </Layout>
