@@ -1,0 +1,27 @@
+---
+import "../../styles/global.css";
+
+import Layout from "../../layout/Layout.astro";
+---
+
+<Layout title="Paolo Vincent - Contact" current="contact">
+  <div>
+    <h1 class="font-main">Contact</h1>
+    <div class="button_holder">
+      <a href="/contact/linkedin" class="button button-active">LinkedIn</a>
+      <a href="/contact/github" class="button">GitHub</a>
+      <a href="/contact/resume" class="button">Resume</a>
+      <a href="mailto:paolo.vincent.pro@gmail.com" class="button">Email</a>
+    </div>
+  </div>
+  <div id="logo" class="flex-grow"></div>
+  <div class="justify-center">
+    <a
+      href="https://www.linkedin.com/in/paolo-vincent-66a908336/"
+      target="_blank"
+      class="button">Paolo Vincent</a
+    >
+  </div>
+</Layout>
+
+<script src="../../scripts/linkedin.js"></script>
