@@ -19,10 +19,10 @@
         @apply transition-all duration-100;
     }
     body {
-        @apply bg-dark text-light font-common text-sm xl:text-base h-screen flex flex-col;
+        @apply bg-dark text-light font-common font-normal text-sm 2xl:text-base h-screen flex flex-col;
     }
     main {
-        @apply flex flex-col md:grid md:grid-cols-3 flex-grow gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-2;
+        @apply flex flex-col h-screen md:overflow-hidden md:grid md:grid-cols-3 gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-2;
     }
     h1 {
         @apply font-main text-5xl lg:text-6xl xl:text-7xl font-bold mb-2;
@@ -40,9 +40,23 @@
         @apply flex w-full p-1 md:p-0 font-medium border-1 md:border-0 border-light rounded-md md:rounded-none text-2xl md:text-3xl lg:text-4xl uppercase hover:bg-light hover:text-dark active:bg-main active:border-main;
     }
     .button-active {
-        @apply bg-main border-0;
+        @apply bg-main border-0 text-dark hover:bg-main;
     }
     .button_holder {
         @apply flex flex-col gap-2 md:gap-2 lg:gap-3;
+    }
+    .svg_holder {
+        @apply flex flex-wrap gap-8 my-2;
+    }
+    .svg {
+        @apply md:w-[38px] md:h-[38px] lg:w-[42px] lg:h-[42px] xl:w-[58px] xl:h-[58px] flex justify-center align-middle;
+    }
+    .scroll_col {
+        @apply overflow-y-scroll!;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scroll_col::-webkit-scrollbar {
+        display: none;
     }
 }

@@ -2,6 +2,22 @@
 import "../../styles/global.css";
 
 import Layout from "../../layout/Layout.astro";
+
+//import svg
+import VSCode from "../../../public/VSCode.svg";
+import Figma from "../../../public/Figma.svg";
+import GitHub from "../../../public/GitHub.svg";
+import Node from "../../../public/Node.svg";
+import AstroIcon from "../../../public/Astro.svg";
+import Tailwind from "../../../public/Tailwind.svg";
+import PocketBase from "../../../public/Pocketbase.svg";
+import Godot from "../../../public/Godot.svg";
+import JavaScript from "../../../public/JS.svg";
+import HTML from "../../../public/HTML.svg";
+import CSS from "../../../public/CSS.svg";
+import SQL from "../../../public/SQL.svg";
+import TypeScript from "../../../public/TypeScript.svg";
+import Python from "../../../public/Python.svg";
 ---
 
 <Layout title="Paolo Vincent - About" current="about">
@@ -9,23 +25,98 @@ import Layout from "../../layout/Layout.astro";
     <h1 class="font-main">About</h1>
     <div class="button_holder">
       <a href="/about/presentation" class="button">Presentation</a>
-      <a href="/about/skills" class="button">Skills</a>
+      <a href="/about/skills" class="button button-active">Skills</a>
       <a href="/about/hobbies" class="button">Hobbies</a>
     </div>
   </div>
   <div class="mb-2 md:hidden">
     <a href="/about" class="button"> &lt; About</a>
   </div>
-  <div>
-    <h2>Skills</h2>
+  <div class="scroll_col">
+    <h2>Hard Skills</h2>
+    <h3>Software and Framework</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      I have learned to use a variety of tools like <strong>Figma</strong>, <strong
+        >VSCode</strong
+      >, <strong>GitHub</strong>,
+      <strong>Nodejs</strong>, <strong>Astro</strong>, <strong>Tailwind</strong
+      >, <strong>Pocketbase</strong> and <strong>Godot</strong>.
+    </p>
+    <p>
+      I also had the occasion to learn a bit of <strong>Photoshop</strong>, <strong
+        >Illustrator</strong
+      >, <strong>DaVinci Resolve</strong> and <strong>THREEjs</strong> which I used
+      in this project.
+    </p>
+    <div class="svg_holder">
+      <div class="svg">
+        <VSCode />
+      </div>
+      <div class="svg">
+        <Figma />
+      </div>
+      <div class="svg">
+        <GitHub />
+      </div>
+      <div class="svg">
+        <Node />
+      </div>
+      <div class="svg">
+        <AstroIcon />
+      </div>
+      <div class="svg">
+        <Tailwind />
+      </div>
+      <div class="svg">
+        <PocketBase />
+      </div>
+      <div class="svg">
+        <Godot />
+      </div>
+    </div>
+    <h3>Language</h3>
+    <p>
+      As a web dev I use mostly <strong>JavaScript</strong>, <strong
+        >HTML</strong
+      >, <strong>CSS</strong> and <strong>SQL</strong> but I got a good amount of
+      <strong>GDScript</strong>, Godot's own language, as well.
+    </p>
+    <div class="svg_holder">
+      <div class="svg">
+        <JavaScript />
+      </div>
+      <div class="svg">
+        <HTML />
+      </div>
+      <div class="svg">
+        <CSS />
+      </div>
+      <div class="svg">
+        <SQL />
+      </div>
+      <div class="svg">
+        <Godot />
+      </div>
+    </div>
+    <p>
+      Got some bases in <strong>TypeScript</strong> and <strong>Python</strong> too.
+    </p>
+    <div class="svg_holder">
+      <div class="svg">
+        <TypeScript />
+      </div>
+      <div class="svg">
+        <Python />
+      </div>
+    </div>
+    <h2>Soft Skills</h2>
+    <p>
+      I am a creative perfecionnist, eager to learn new things to create fresh
+      experiences.
+    </p>
+    <p>
+      I got no problem to collaborate with other people from any field to
+      achieve greater things.
     </p>
   </div>
   <div id="man" class="flex-grow"></div>
