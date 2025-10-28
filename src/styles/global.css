@@ -22,7 +22,7 @@
         @apply bg-dark text-light font-common font-normal text-sm 2xl:text-base h-screen flex flex-col;
     }
     main {
-        @apply flex flex-col h-screen md:overflow-hidden md:grid md:grid-cols-3 gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-2;
+        @apply flex flex-col min-h-fit md:min-h-auto h-screen md:overflow-hidden md:grid md:grid-cols-3 gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-4;
     }
     h1 {
         @apply font-main text-5xl lg:text-6xl xl:text-7xl font-bold mb-2;
@@ -52,11 +52,28 @@
         @apply md:w-[38px] md:h-[38px] lg:w-[42px] lg:h-[42px] xl:w-[58px] xl:h-[58px] flex justify-center align-middle;
     }
     .scroll_col {
-        @apply overflow-y-scroll!;
+        @apply md:overflow-y-scroll!;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
     .scroll_col::-webkit-scrollbar {
+        display: none;
+    }
+    .image_holder {
+        @apply flex flex-col gap-2 snap-center md:snap-align-none min-w-full md:min-w-auto
+    }
+    .image {
+        @apply border-2 border-main object-cover
+    }
+    .image_desc {
+        @apply text-center text-xs font-light
+    }
+    .carousel {
+        @apply flex-row md:flex-col snap-x snap-mandatory md:snap-none overflow-x-scroll md:overflow-y-scroll! min-h-fit md:min-h-auto -mx-4 px-8 md:mx-0 md:px-0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .carousel::-webkit-scrollbar {
         display: none;
     }
 }

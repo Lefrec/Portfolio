@@ -1,0 +1,40 @@
+---
+import "../../styles/global.css";
+
+import Layout from "../../layout/Layout.astro";
+
+import { getWorkList, getWork } from "../../../backend/backend.js";
+
+const { id } = Astro.params;
+
+const workList = await getWorkList();
+
+const work = await getWork(id);
+console.log(work.ImageJSON)
+---
+
+<Layout title="Paolo Vincent - Work" current="work">
+  <div class="hidden md:flex">
+    <h1 class="font-main">Work</h1>
+    <div class="button_holder">
+      {workList.map(d => 
+        <a href=`/work/${d.id}` class={id === d.id ? "button button-active" : "button" }>{d.Title}</a>
+      )}
+    </div>
+  </div>
+  <div class="mb-2 md:hidden">
+    <a href="/work" class="button"> &lt; Work</a>
+  </div>
+  <div class="scroll_col" set:html={work.Content}></div>
+  <div class="carousel">
+    {work.ImageJSON.map(d => 
+        <div class="image_holder">
+            {(d.ImageURL.slice(-3) == "mp4" || d.ImageURL.slice(-3) == "mp3") ? 
+            <video class="image" src={d.ImageURL} autoplay/> : 
+            <img class="image" src={d.ImageURL} alt={d.ImageDesc}> 
+            }
+            <p class="image_desc">{d.ImageDesc}</p>
+        </div>
+    )}
+  </div>
+</Layout>
