@@ -30,7 +30,7 @@ console.log(work.ImageJSON)
     {work.ImageJSON.map(d => 
         <div class="image_holder">
             {(d.ImageURL.slice(-3) == "mp4" || d.ImageURL.slice(-3) == "mp3") ? 
-            <video class="image" src={d.ImageURL} autoplay/> : 
+            <video class="image" src={d.ImageURL} autoplay loop/> : 
             <img class="image" src={d.ImageURL} alt={d.ImageDesc}> 
             }
             <p class="image_desc">{d.ImageDesc}</p>
