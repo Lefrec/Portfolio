@@ -10,6 +10,11 @@ const { title, current, menu } = Astro.props;
 
 <html lang="en">
   <head>
+    <script defer>
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.add("light");
+      }
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/Logo.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -17,7 +22,7 @@ const { title, current, menu } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header current={current} menu={menu}/>
+    <Header current={current} menu={menu} />
     <main>
       <slot />
     </main>

@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=UnifrakturCook:wght@700&display=swap');
 @import "tailwindcss";
 
+@custom-variant light (&:where(.light, .light *));
+
 @theme {
-    /* Colors : */
     --color-dark : rgb( 16, 16, 16 );
     --color-light : rgb( 255, 255, 255);
     --color-main : rgb( 115, 63, 153);
-    /* Fonts */
     --font-main: UnifrakturCook, serif;
     --font-header: Grenze, serif;
     --font-common: Source Code Pro, sans-serif;
-
+}
+.light {
+    --color-dark : rgb( 232, 232, 232);
+    --color-light : rgb( 32, 32, 32 );
+    --color-main : rgb( 50, 200, 150);
 }
 
 @layer base {
@@ -22,7 +26,7 @@
         @apply bg-dark text-light font-common font-normal text-sm 2xl:text-base h-screen flex flex-col;
     }
     main {
-        @apply flex flex-col min-h-fit md:min-h-auto h-screen md:overflow-hidden md:grid md:grid-cols-3 gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-4;
+        @apply flex flex-col h-screen md:overflow-hidden md:grid md:grid-cols-3 gap-2 px-4 md:px-8 py-4 *:flex *:flex-col *:gap-2;
     }
     h1 {
         @apply font-main text-5xl lg:text-6xl xl:text-7xl font-bold mb-2;
@@ -50,9 +54,10 @@
     }
     .svg {
         @apply md:w-[38px] md:h-[38px] lg:w-[42px] lg:h-[42px] xl:w-[58px] xl:h-[58px] flex justify-center align-middle;
+        fill: var(--color-light)
     }
     .scroll_col {
-        @apply md:overflow-y-scroll!;
+        @apply overflow-y-scroll!;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }

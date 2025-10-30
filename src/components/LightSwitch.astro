@@ -1,0 +1,37 @@
+---
+import Moon from "../assets/moon.svg";
+import Sun from "../assets/sun.svg";
+---
+
+<button
+  id="theme-toggle"
+  class="flex gap-0 border-2 border-main rounded-sm cursor-pointer hover:bg-light group"
+  aria-pressed="false"
+>
+  <div class="p-1 bg-main" aria-hidden>
+    <Moon class="w-6 h-6 lg:w-8 lg:h-8 fill-light" />
+  </div>
+  <div class="p-1" aria-hidden>
+    <Sun class="w-6 h-6 lg:w-8 lg:h-8 fill-light group-hover:fill-dark" />
+  </div>
+</button>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  toggle?.addEventListener("click", () => {
+    if (localStorage.getItem("theme") === "light") {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      localStorage.setItem("theme", "light")
+      document.documentElement.classList.add("light");
+    }
+    dispatchEvent(toggled);
+    console.log(localStorage.getItem("theme"));
+  });
+  const toggled = new CustomEvent("toggled", {
+    detail: {
+      theme: localStorage.getItem("theme")
+    }
+  });
+</script>

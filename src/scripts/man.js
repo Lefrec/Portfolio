@@ -31,8 +31,14 @@ function init() {
     //ascii effect renderer
     const effect = new AsciiEffect(renderer, ' .:-=+*#%@', { invert: true });
     effect.setSize(width, height);
-    effect.domElement.style.color = '#733F99';
-    effect.domElement.style.backgroundColor = '#101010';
+    //get css var from computed style
+    function updateColors() {
+        effect.domElement.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-main');
+        effect.domElement.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--color-dark');
+    }
+    updateColors();
+    //update colors when the LightSwitch is toggled
+    window.addEventListener('toggled', updateColors);
     effect.domElement.style.width = '100%';
     effect.domElement.style.height = '100%';
     manContainer.appendChild(effect.domElement);

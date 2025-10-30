@@ -25,8 +25,12 @@ function init() {
     // ascii effect renderer
     const effect = new AsciiEffect(renderer, ' .:-=+*#%@', { invert: true });
     effect.setSize(width, height);
-    effect.domElement.style.color = '#733F99';
-    effect.domElement.style.backgroundColor = '#101010';
+    function updateColors() {
+        effect.domElement.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-main');
+        effect.domElement.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--color-dark');
+    }
+    updateColors();
+    window.addEventListener('toggled', updateColors);
     effect.domElement.style.width = '100%';
     effect.domElement.style.height = '100%';
     skullContainer.appendChild(effect.domElement);
