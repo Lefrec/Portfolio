@@ -8,30 +8,61 @@ import Sun from "../assets/sun.svg";
   class="flex gap-0 border-2 border-main rounded-sm cursor-pointer hover:bg-light group"
   aria-pressed="false"
 >
-  <div class="p-1 bg-main" aria-hidden>
-    <Moon class="w-6 h-6 lg:w-8 lg:h-8 fill-light" />
+  <div id="moonHolder" class="p-1" aria-hidden>
+    <Moon id="moon" class="w-6 h-6 lg:w-8 lg:h-8 fill-light" />
   </div>
-  <div class="p-1" aria-hidden>
-    <Sun class="w-6 h-6 lg:w-8 lg:h-8 fill-light group-hover:fill-dark" />
+  <div id="sunHolder" class="p-1" aria-hidden>
+    <Sun id="sun" class="w-6 h-6 lg:w-8 lg:h-8 fill-light" />
   </div>
 </button>
 
 <script>
+  //getting elements
+  const moon = document.getElementById("moon");
+  const sun = document.getElementById("sun");
+  const moonHolder = document.getElementById("moonHolder");
+  const sunHolder = document.getElementById("sunHolder");
   const toggle = document.getElementById("theme-toggle");
+
+  //load styles
+  const currentTheme = localStorage.getItem("theme");
+  console.log("current : " + currentTheme);
+  setSwitchStyles(currentTheme);
+
+  //call to give correct styles to the switch
+  function setSwitchStyles(theme) {
+    if (theme === "dark") {
+    sun.classList.add("group-hover:fill-dark"); 
+    moonHolder.classList.add("bg-main");
+    moon.classList.remove("group-hover:fill-dark");
+    sunHolder.classList.remove("bg-main");
+   } 
+   if (theme === "light") {
+    moon.classList.add("group-hover:fill-dark");
+    sunHolder.classList.add("bg-main");
+    sun.classList.remove("group-hover:fill-dark"); 
+    moonHolder.classList.remove("bg-main");
+   }
+  }
+
+  //click event listener
   toggle?.addEventListener("click", () => {
     if (localStorage.getItem("theme") === "light") {
       localStorage.setItem("theme", "dark");
       document.documentElement.classList.remove("light");
     } else {
-      localStorage.setItem("theme", "light")
+      localStorage.setItem("theme", "light");
       document.documentElement.classList.add("light");
     }
+    setSwitchStyles(localStorage.getItem("theme"));
     dispatchEvent(toggled);
     console.log(localStorage.getItem("theme"));
   });
+
+  //CustomEvent
   const toggled = new CustomEvent("toggled", {
     detail: {
-      theme: localStorage.getItem("theme")
-    }
+      theme: localStorage.getItem("theme"),
+    },
   });
 </script>
